@@ -1,4 +1,4 @@
-import config from "./config";
+import apiBaseUrl from "./config";
 
 // GET, POST, DELETE, and PUT requests to the REST API
 export default class Data {
@@ -9,7 +9,7 @@ export default class Data {
     requiresAuth = false,
     credentials = null
   ) {
-    const url = config.apiBaseUrl + path;
+    const url = apiBaseUrl + path;
 
     const options = {
       method,

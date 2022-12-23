@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom"
-import axios from 'axios'
 import withContext from "./Context";
 
 //----Components -------
@@ -43,7 +42,6 @@ const App = () => {
         <Route path="/signout" element={<UserSignOutWithContext />} />
         <Route path="/courses" element={<CoursesWithContext />} />
         <Route path="/courses/:id" element={<CourseDetailWithContext />} />
-        <Route path="*" element={<NotFound />} />
       </Routes>
     </React.Fragment>
   );
