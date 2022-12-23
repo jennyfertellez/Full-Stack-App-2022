@@ -11,6 +11,7 @@ import UpdateCourse from "./components/UpdateCourse";
 import UserSignIn from "./components/UserSignIn";
 import UserSignUp from "./components/UserSignUp";
 import UserSignOut from "./components/UserSignOut";
+import PrivateRoute from "./PrivateRoute";
 
 //------ Components with Context -------//
 const HeaderWithContext = withContext(Header);
@@ -21,7 +22,7 @@ const UpdateCourseWithContext = withContext(UpdateCourse);
 const UserSignInWithContext = withContext(UserSignIn);
 const UserSignUpWithContext = withContext(UserSignUp);
 const UserSignOutWithContext = withContext(UserSignOut);
-
+const PrivateRoutesWithContext = withContext(PrivateRoute);
 
 
 const App = () => {
