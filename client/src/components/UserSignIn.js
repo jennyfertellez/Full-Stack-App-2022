@@ -29,13 +29,13 @@ const UserSignIn = ({ context }) => {
             .then(currentUser => (currentUser ? navigate(prevLocation) : setErrors(['Either your email address or password is incorrect. Please try again'])))
             .catch(err => {
               console.log('Sign-In Error: ', err)
-              redirectTo('/error'); 
+              navigate('/error'); 
             }); 
             } else {
               setErrors(['Correct email address and password are required']) 
             }
           }
-    }
+    
     
 //Closes user from sign in and redirects back to home page
   const handleSubmit = (e) => {
@@ -78,7 +78,7 @@ return (
                     <button className="button" type="submit">
                         Sign In
                     </button>
-                    <button className="button button-secondary" onclick={handleCancel}>
+                    <button className="button button-secondary" onclick={handleSubmit}>
                         Cancel
                     </button>
                 </form>
@@ -88,5 +88,5 @@ return (
                 </p>
             </div>
             );
-
+              }
 export default UserSignIn;
