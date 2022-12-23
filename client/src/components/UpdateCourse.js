@@ -14,7 +14,21 @@ const updateCourse = ({ context }) => {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    
+    useEffect(() => {
+        context.data
+          .getCourse(id)
+          .then((data) => {
+            setCourse(data);
+            setTitle(data.title);
+            setDescription(data.description);
+            setEstimatedTime(data.estimatedTime);
+            setMaterialsNeeded(data.materialsNeeded);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, []);
 }
 //This component also renders an "Update Course" button that sends a PUT request to the REST API's 
 
