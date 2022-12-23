@@ -2,9 +2,15 @@ import React from "react";
 import { Route, Routes } from "react-router-dom"
 import axios from "axios";
 
-//Imported Components
-import Header from './components/Header'
-
+//----Components -------
+import Header from "./components/Header"
+import Courses from "./components/Courses"
+import CourseDetail from "./components/"
+import CreateCourse from "./components/"
+import UpdateCourse from "./components/"
+import UserSignIn from "./components/"
+import UserSignUp from "./components/"
+import UserSignOut from "./components/"
 
 
 function App() {
