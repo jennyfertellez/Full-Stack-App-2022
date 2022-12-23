@@ -22,24 +22,27 @@ const CourseDetail = ({ context }) => {
 
 //The deletion of a course
 const courseDelete = () => {
-    context.data.deleteCourse(id, currentUser)
+    context.data.deleteCourse(id, context.authenticatedUser.emailAddress, context.authenticatedUser.password)
         .then(() => { navigate('/') })
         .catch((err) => {
             console.error(err);
-            navigate('/error')
+            navigate('/')
         });
 };
 
 //This component also renders a "Delete Course" button to delete a course
 //This componets also renders an "Update Course" button to naviagate to the "Update Course" screen
 return (
-    <>
     <main>
     <div className="actions--bar">
         <div className="wrap">
-
+            {context.authenticatedUser && context.authenticatedUser.id === course.userId ? 
+            (<React.Fragment>
             <Link className="button" to={`/courses/${course.id}/update`}>Update Course</Link>
             <Link className="button" to="/" onClick={() => {courseDelete(id)}}>Delete Course</Link>
+            </React.Fragment>):
+            '' }
+            
             <Link className="button button-secondary" to="/">Return to List</Link>
         </div>
     </div>
@@ -51,8 +54,8 @@ return (
                 <div>
                     <h3 className="course--detail--title">Course</h3>
                     <h4 className="course--name">{course.title}</h4>
-                    <p>{`By: ${course.courseOwner?.firstName} ${course.courseOwner?.lastName}`}</p>
-                    <ReactMarkdown>children = {course.description}</ReactMarkdown>
+                    <p>By: {course.user?.firstName} {course.user?.lastName}</p>
+                    <ReactMarkdown children = {course.description}/>
 
                 </div>
                 <div>
@@ -61,14 +64,13 @@ return (
 
                     <h3 className="course--detail--title">Materials Needed</h3>
                     <ul className="course--detail--list">
-                    <ReactMarkdown> children = {course.materialNeeded}</ReactMarkdown>
+                    <ReactMarkdown children = {course.materialsNeeded}/>
                     </ul>
                 </div>
             </div>
         </form>
     </div>
 </main>
-</>
 );
 };
 

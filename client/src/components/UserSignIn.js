@@ -13,7 +13,7 @@ const UserSignIn = ({ context }) => {
     const location = useLocation();
 
 //Function that handles input changes 
-    const handleChange = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
 
         //The values are a reflection of the information inserted in the <input> elements
@@ -35,20 +35,13 @@ const UserSignIn = ({ context }) => {
               setErrors(['Correct email address and password are required']) 
             }
           }
-    
-    
-//Closes user from sign in and redirects back to home page
-  const handleSubmit = (e) => {
-    e.preventDefault(); 
-    navigate('/')
-    }
 
 //This component also renders a "Sign In" button to sign in a user 
 //And a "Cancel" button to return the user to the default route
 return (
             <div className="form--centered">
                 <h2>Sign In</h2>
-                { errors ? (
+                { errors.length > 0 ? (
                   <div className="validation--errors">
                   <h3>Validation Errors</h3>
                   <ul>
@@ -64,23 +57,23 @@ return (
                         id="emailAddress" 
                         name="emailAddress" 
                         type="email" 
-                        value={emailAddress}
-                        onChange={handleChange}
+                        ref={emailAddress}
+                        defaultValue = ""
                         />
                     <label htmlFor="password">Password</label>
                     <input 
                     id="password" 
                     name="password" 
                     type="password" 
-                    value={password}
-                    onChange={handleChange}
+                    ref={password}
+                    defaultValue = ""
                     />
                     <button className="button" type="submit">
                         Sign In
                     </button>
-                    <button className="button button-secondary" onclick={handleSubmit}>
+                    <Link className="button button-secondary" to='/'>
                         Cancel
-                    </button>
+                    </Link>
                 </form>
                 <p>
                     Don't have a user account? Click here to{' '} 

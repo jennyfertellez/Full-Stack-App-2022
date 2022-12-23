@@ -47,7 +47,7 @@ router.get('/courses/:id', asyncHandler(async(req, res) => {
             'materialsNeeded',
             'userId'
         ],
-        included: [
+        include: [
             {
                 model: User,
                 as: 'user',

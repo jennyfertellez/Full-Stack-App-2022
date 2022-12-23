@@ -38,8 +38,8 @@ export class Provider extends Component {
    * @param {string} password - argument that is passed to get user
    * @returns {object} - returns a user object that will then be included in value and passed via a higher order component
    */
-  signIn = async (emailAddress, password) => {
-    const user = await this.data.getUser(emailAddress, password);
+  signIn = async (username, password) => {
+    const user = await this.data.getUser(username, password);
     const plainText = password;
 
     if (user !== null) {

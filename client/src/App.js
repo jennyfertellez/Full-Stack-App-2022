@@ -22,7 +22,7 @@ const UpdateCourseWithContext = withContext(UpdateCourse);
 const UserSignInWithContext = withContext(UserSignIn);
 const UserSignUpWithContext = withContext(UserSignUp);
 const UserSignOutWithContext = withContext(UserSignOut);
-const PrivateRoutesWithContext = withContext(PrivateRoute);
+const PrivateRouteWithContext = withContext(PrivateRoute);
 
 
 const App = () => {
@@ -30,7 +30,7 @@ const App = () => {
     <React.Fragment>
       <HeaderWithContext />
       <Routes>
-        <Route element={<PrivateRoutesWithContext />}>
+        <Route element={<PrivateRouteWithContext />}>
           <Route
             path="/courses/:id/update"
             element={<UpdateCourseWithContext />}

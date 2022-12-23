@@ -27,7 +27,7 @@ const CreateCourse = ({ context }) => {
       context.data
         .createCourse(
           course,
-          context.authenticatedUser.email,
+          context.authenticatedUser.emailAddress, 
           context.authenticatedUser.password
         )
         .then((errors) => {

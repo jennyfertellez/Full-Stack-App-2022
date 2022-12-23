@@ -1,8 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom'
 
 //This component provides the "Sign Up" screen that allows users to create an account
-const userSignUp = ({ context }) => {
+const UserSignUp = ({ context }) => {
     //User inputs their information and (state) is updated 
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');

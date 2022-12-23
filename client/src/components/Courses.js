@@ -23,7 +23,7 @@ return (
     <main>
             <div className="wrap main--grid">
                 {courses.map(course => (
-                    <Link key = {course.id} className="course--module course--link" to={`/courses/${courses.id}`}>
+                    <Link key = {course.id} className="course--module course--link" to={`/courses/${course.id}`}>
                     <h2 className="course--label">Course</h2>
                     <h3 className="course--title">{course.title}</h3>
                 </Link>
