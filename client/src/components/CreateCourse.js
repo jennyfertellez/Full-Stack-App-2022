@@ -65,7 +65,7 @@ return (
             </ul>
           </div>
         ) : null}
-        <form onSubmit={handleCreateCourse}>
+        <form onSubmit={handleChange}>
           <div className="main--flex">
             <div>
               <label htmlFor="courseTitle">Course Title</label>
