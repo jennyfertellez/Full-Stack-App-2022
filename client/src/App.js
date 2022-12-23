@@ -3,17 +3,17 @@ import { Route, Routes } from "react-router-dom"
 import axios from "axios";
 
 //----Components -------
-import Header from "./components/Header"
-import Courses from "./components/Courses"
-import CourseDetail from "./components/"
-import CreateCourse from "./components/"
-import UpdateCourse from "./components/"
-import UserSignIn from "./components/"
-import UserSignUp from "./components/"
-import UserSignOut from "./components/"
+import Header from "./components/Header";
+import Courses from "./components/Courses";
+import CourseDetail from "./components/CourseDetail";
+import CreateCourse from "./components/CreateCourse";
+import UpdateCourse from "./components/UpdateCourse";
+import UserSignIn from "./components/UserSignIn";
+import UserSignUp from "./components/UserSignUp";
+import UserSignOut from "./components/UserSignOut";
 
 
-function App() {
+const App() {
   let courses = [];  
   axios.get('http://localhost:5000/api/courses')
     .then((response) => {
