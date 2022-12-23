@@ -19,7 +19,6 @@ const Courses = ({ context }) => {
 //Each course has its own respective link to their own "Course Detail" screen
 //This component also renders a link to the "Create Course" screen
 return (
-    <>
     <main>
             <div className="wrap main--grid">
                 {courses.map(course => (
@@ -45,7 +44,6 @@ return (
                 </Link>
             </div>
         </main>
-    </>
 );
 };
 
